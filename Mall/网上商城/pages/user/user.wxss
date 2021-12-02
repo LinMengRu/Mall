@@ -1,0 +1,31 @@
+/* pages/login/login.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  background: #e7c3e2;
+  color: #336699;
+  height: 100%;
+}
+
+image {
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
+  border: 1px solid #000;
+  margin: 5%;
+}
+
+.name {
+  float: right;
+  margin-top: 5%;
+  margin-right: 40%;
+}
+
+button {
+  margin: 5px;
+}
+
+.fw text {
+  margin: 8%;
+  font-size: 12px;
+}

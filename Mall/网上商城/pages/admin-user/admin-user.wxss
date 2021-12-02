@@ -1,0 +1,41 @@
+/* pages/admin-user/admin-user.wxss */
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #dde4e7;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #5974a7;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+/* 弹窗 */
+.cur {
+  color: #000;
+}

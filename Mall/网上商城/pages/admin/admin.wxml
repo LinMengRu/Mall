@@ -1,0 +1,29 @@
+<!--pages/admin/admin.wxml-->
+
+<view>
+  <button type="primary" size="mini" bindtap="users">用户管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">订单管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">积分管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">优惠卷管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">客服管理</button>
+</view>
+<view>
+  <button type="primary" size="mini" bindtap="goods">商品管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">分类管理</button>
+</view>
+<view>
+  <button type="primary" size="mini">活动管理</button>
+</view>
+<view>
+  <button type="primary" size="mini" bindtap="out">设置(退出)</button>
+</view>

@@ -1,0 +1,11 @@
+/* pages/admin-goods-info/admin-goods-info.wxss */
+.box {
+  background-color: rgb(221, 245, 212);
+}
+
+/* 图片 */
+image {
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: #ccc;
+}

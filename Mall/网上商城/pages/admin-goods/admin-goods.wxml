@@ -1,0 +1,114 @@
+<!--pages/admin-goods/admin-goods.wxml-->
+<view class="ss">
+  <input placeholder="输入商品进行搜索" bindinput="bindKeyInput" type='text' />
+  <icon type="search" size="25" bindtap="search"></icon>
+</view>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">图片</view>
+    <view class="th">商品</view>
+    <!-- <view class="th "></view> -->
+    <!-- <view class="th "></view> -->
+    <view class="th ">
+      <button type="primary" size="mini" bindtap="modal_add" data-aid="{{item.aid}}" data-agname="{{item.agoodsname}}"
+        data-agnews="{{item.agoodsnews}}" data-agimg="{{item.agoodsimg}}" data-agprice="{{item.aprice}}"
+        data-agnumber="{{item.anumber}}" data-ashop="{{item.ashop}}" data-aarea="{{item.aarea}}">添加商品</button>
+    </view>
+    <modal hidden="{{hiddenmodalputadd}}" title="添加商品信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelMadd"
+      bindconfirm="confirmMadd">
+      <view class=" cur">上传商品图片：</view>
+      <image src="{{imgadd}}" bindtap="addchooseImage"></image>
+      <view class=" cur">商品名：</view>
+      <input bindinput='iNameadd' type='text' placeholder="请输入商品名..." auto-focus />
+      <view class="cur">商品详情：</view>
+      <input bindinput='iNewsadd' type='text' placeholder="请输入商品详情..." />
+      <view class="cur">商品价格：</view>
+      <input bindinput='iPriceadd' type='text' placeholder="请输入商品价格..." />
+      <view class="cur">商品库存：</view>
+      <input bindinput='iNumberadd' type='text' placeholder="请输入商品数量..." />
+      <view class="cur">店铺名：</view>
+      <input bindinput='iShopadd' type='text' placeholder="请输入店铺名..." />
+      <view class="cur">商品产地：</view>
+      <input bindinput='iAreaadd' type='text' placeholder="请输入商品产地..." />
+    </modal>
+  </view>
+  <block wx:for="{{arraa}}">
+    <view class="tr bg-g">
+      <view class="td">
+        <image src="{{item.goodsimg}}"></image>
+      </view>
+      <view class="td">{{item.goodsname}}</view>
+      <view class="td">
+        <button type="default" size="mini" bindtap="modal_info" data-id="{{item.id}}" data-gname="{{item.goodsname}}"
+          data-gnews="{{item.goodsnews}}" data-gimg="{{item.goodsimg}}" data-price="{{item.price}}"
+          data-number="{{item.number}}" data-shop="{{item.shop}}" data-area="{{item.area}}">详情</button>
+      </view>
+      <view class="td">
+        <button type="default" size="mini" bindtap="modal_edit" data-id="{{item.id}}" data-gname="{{item.goodsname}}"
+          data-gnews="{{item.goodsnews}}" data-gimg="{{item.goodsimg}}" data-gprice="{{item.price}}"
+          data-gnumber="{{item.number}}" data-gshop="{{item.shop}}" data-garea="{{item.area}}">编辑</button>
+      </view>
+      <modal hidden="{{hiddenmodalput}}" title="修改商品信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelM"
+        bindconfirm="confirmM">
+        <view class=" cur">上传商品图片：</view>
+        <image src="{{goodsimg}}" bindtap="chooseImage"></image>
+        <view class=" cur">商品名：</view>
+        <input bindinput='iName' value="{{goodsname}}" type='text' placeholder="请输入商品名..." auto-focus />
+        <view class="cur">商品详情：</view>
+        <input bindinput='iNews' value="{{goodsnews}}" type='text' placeholder="请输入商品详情..." />
+        <view class="cur">商品价格：</view>
+        <input bindinput='iPrice' value="{{price}}" type='number' step="0.01" placeholder="请输入商品价格..." />
+        <view class="cur">商品库存：</view>
+        <input bindinput='iNumber' value="{{number}}" type='number' placeholder="请输入商品数量..." />
+        <view class="cur">店铺名：</view>
+        <input bindinput='iShop' value="{{shop}}" type='text' placeholder="请输入店铺名..." />
+        <view class="cur">商品产地：</view>
+        <input bindinput='iArea' value="{{area}}" type='text' placeholder="请输入商品产地..." />
+      </modal>
+      <view class="td"><button size="mini" type="warn" data-delid="{{item.id}}" bindtap="modal_del">删除</button>
+      </view>
+    </view>
+  </block>
+
+
+  <block wx:for="{{arr}}" wx:if="{{hiddenName}}">
+    <view class="tr bg-g">
+      <view class="td">
+        <image src="{{item.goodsimg}}"></image>
+      </view>
+      <view class="td">{{item.goodsname}}</view>
+      <view class="td">
+        <button type="default" size="mini" bindtap="modal_info" data-id="{{item.id}}" data-gname="{{item.goodsname}}"
+          data-gnews="{{item.goodsnews}}" data-gimg="{{item.goodsimg}}" data-price="{{item.price}}"
+          data-number="{{item.number}}" data-shop="{{item.shop}}" data-area="{{item.area}}">详情</button>
+      </view>
+      <view class="td">
+        <button type="default" size="mini" bindtap="modal_edit" data-id="{{item.id}}" data-gname="{{item.goodsname}}"
+          data-gnews="{{item.goodsnews}}" data-gimg="{{item.goodsimg}}" data-gprice="{{item.price}}"
+          data-gnumber="{{item.number}}" data-gshop="{{item.shop}}" data-garea="{{item.area}}">编辑</button>
+      </view>
+      <modal hidden="{{hiddenmodalput}}" title="修改商品信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelM"
+        bindconfirm="confirmM">
+        <view class=" cur">上传商品图片：</view>
+        <image src="{{goodsimg}}" bindtap="chooseImage"></image>
+        <view class=" cur">商品名：</view>
+        <input bindinput='iName' value="{{goodsname}}" type='text' placeholder="请输入商品名..." auto-focus />
+        <view class="cur">商品详情：</view>
+        <input bindinput='iNews' value="{{goodsnews}}" type='text' placeholder="请输入商品详情..." />
+        <view class="cur">商品价格：</view>
+        <input bindinput='iPrice' value="{{price}}" type='number' step="0.01" placeholder="请输入商品价格..." />
+        <view class="cur">商品库存：</view>
+        <input bindinput='iNumber' value="{{number}}" type='number' placeholder="请输入商品数量..." />
+        <view class="cur">店铺名：</view>
+        <input bindinput='iShop' value="{{shop}}" type='text' placeholder="请输入店铺名..." />
+        <view class="cur">商品产地：</view>
+        <input bindinput='iArea' value="{{area}}" type='text' placeholder="请输入商品产地..." />
+      </modal>
+      <view class="td"><button size="mini" type="warn" data-delid="{{item.id}}" bindtap="modal_del">删除</button>
+      </view>
+    </view>
+  </block>
+
+
+
+</view>

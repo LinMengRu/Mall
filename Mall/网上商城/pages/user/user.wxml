@@ -1,0 +1,30 @@
+<!--pages/login/login.wxml-->
+<view>
+  <image src="{{imgSrc}}" bindtap="chooseImage"></image>
+  <text class="name">名称：</text>
+</view>
+<view>
+  <button type="primary" size="mini">我的资料</button>
+</view>
+<view>
+  <button type="primary" size="mini">我的订单</button>
+</view>
+<view>
+  <button type="primary" size="mini">积分系统</button>
+</view>
+<view>
+  <button type="primary" size="mini">优惠卷</button>
+</view>
+<view>
+  <button type="primary" size="mini">在线客服</button>
+</view>
+<view>
+  <button type="primary" size="mini" bindtap="out">设置(退出)</button>
+</view>
+<view class="fw">
+  <text>常见问题</text>
+
+  <text>使用条款</text>
+
+  <text>隐私权政策</text>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/admin-goods-info/admin-goods-info.wxml-->
+<!-- //商品详情：价格，数量，店铺名，产地 （类别）暂时不弄 -->
+<view class="box">
+  <image src="{{img}}"></image>
+
+  <view><text>编号：{{id}}</text></view>
+  <view><text>商品名：{{name}}</text></view>
+  <view><text>商品详情：{{news}}</text></view>
+  <view><text>价格：{{price}}</text></view>
+  <view><text>数量：{{number}}</text></view>
+  <view><text>店铺名：{{shop}}</text></view>
+  <view><text>产地：{{area}}</text></view>
+  <view><text>类别：未知type(下拉框)</text></view>
+</view>

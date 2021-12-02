@@ -1,0 +1,24 @@
+<!--pages/user/user.wxml-->
+<view>
+  <h1>欢迎来到网上商城！</h1>
+</view>
+<form bindsubmit="login" class="login">
+  <view>
+    <text>账号：</text>
+    <input type="user" name="user" placeholder="(管理员账号admin,用户账号123)" />
+  </view>
+  <view>
+    <text>密码：</text>
+    <input type="password" name="password" placeholder="(管理员密码123,用户密码123)" />
+  </view>
+  <button type="primary" form-type="submit">登录</button>
+</form>
+<button type="default" size="mini" bindtap="modal_add">注册新用户</button>
+<modal hidden="{{hiddenmodalput}}" title="注册信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelM"
+  bindconfirm="confirmM">
+  <view class=" cur">账号：</view>
+  <input bindinput='iName' value="{{name}}" type='text' placeholder="请输入账号..." auto-focus />
+  <view class="cur">密码：</view>
+  <input bindinput='iPassword' value="{{password}}" type='text' placeholder="请输入密码..." />
+</modal>
+<button type=" " size="mini" bindtap="modal_help">忘记密码</button>

@@ -1,0 +1,21 @@
+<!--pages/goods/goods.wxml-->
+<!-- 搜索框 -->
+<view class="ss">
+  <input placeholder="输入商品进行搜索" bindinput="bindKeyInput" />
+  <icon type="search" size="25" bindtap="search"></icon>
+</view>
+<!-- 推荐栏和商品栏 -->
+<view class="tab">
+  <view class="tab-item {{tab==0?'active':''}}" bindtap="changeItem" data-item="0">商品推荐</view>
+  <view class="tab-item {{tab==1?'active':''}}" bindtap="changeItem" data-item="1">所有商品</view>
+</view>
+<view class="content" style="height: 100%;">
+  <swiper class="current={{item}}" bindchange="changeTab">
+    <swiper-item>
+      <include src="recommend.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="all.wxml" />
+    </swiper-item>
+  </swiper>
+</view>

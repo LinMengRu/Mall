@@ -1,0 +1,30 @@
+<!--pages/admin-user/admin-user.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">编号</view>
+    <view class="th">账号</view>
+    <view class="th ">密码</view>
+    <view class="th "></view>
+    <view class="th "></view>
+  </view>
+  <block wx:for="{{arr}}">
+    <view class="tr bg-g">
+      <view class="td">{{item.id}}</view>
+      <view class="td">{{item.username}}</view>
+      <view class="td">{{item.password}}</view>
+      <view class="td">
+        <button type="default" size="mini" bindtap="modal_edit" data-id="{{item.id}}" data-name="{{item.username}}"
+          data-pwd="{{item.password}}">编辑</button>
+      </view>
+      <modal hidden="{{hiddenmodalput}}" title="修改个人信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelM"
+        bindconfirm="confirmM">
+        <view class="cur">id：{{id}}</view>
+        <view class=" cur">账号：</view>
+        <input bindinput='iName' value="{{name}}" type='text' placeholder="请输入账号..." auto-focus />
+        <view class="cur">密码：</view>
+        <input bindinput='iPassword' value="{{password}}" type='text' placeholder="请输入密码..." />
+      </modal>
+      <view class="td"><button size="mini" type="warn" data-id="{{item.id}}" bindtap="modal_del">删除</button></view>
+    </view>
+  </block>
+</view>
